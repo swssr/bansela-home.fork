@@ -278,6 +278,24 @@ body {
   perspective: 1000px;
 }
 
+@keyframes fade {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0.8;
+    transform: translateY(10vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes shake {
   10%,
   90% {

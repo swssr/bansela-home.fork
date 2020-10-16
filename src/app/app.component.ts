@@ -45,6 +45,8 @@ export class AppComponent implements OnInit {
     }
   ];
 
+  private activeTile: string = null;
+
   ngOnInit(): void {
     this.profile = { bucks: Math.round(Math.random() * 100) };
   }

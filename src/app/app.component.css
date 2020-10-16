@@ -70,6 +70,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, auto);
   align-items: center;
+  animation: shake 0.2s both;
+  animation-delay: 3s;
 }
 .cta-wrapper::before {
   --w: 4px;
@@ -141,6 +143,49 @@ body {
   transform: scale(1);
   z-index: 2;
 }
+
+/* START OTHER PAGES */
+/* ... 
+  N - 1: Dialog
+
+*/
+
+.dialog {
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  width: 90vw;
+  height: 90vh;
+  margin-left: 5vw;
+  margin-top: 5vh;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  padding: 1em;
+  z-index: 1;
+}
+.dialog .img--bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.dialog .btn--close {
+  background-color: rgba(255, 255, 255, 0.534);
+  border-radius: 50%;
+  margin-left: auto;
+}
+/* END OTHER PAGES */
+
+/* HANDLE ANIMATION */
+.page {
+  animation: fade 1s ease-out;
+}
+.page > *,
+.dialog {
+  animation: fade-up 0.8s ease-out;
+}
+/* END HANDLE ANIMATION */
 @media (max-width: 368px) {
   .hero {
     padding: 0;
