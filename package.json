@@ -16,14 +16,14 @@
     "@angular/common": "^10.0.0",
     "@angular/compiler": "^10.0.0",
     "@angular/core": "^10.0.0",
-    "@angular/forms": "^10.0.0",
+    "@angular/forms": "10.1.6",
     "@angular/platform-browser": "^10.0.0",
     "@angular/platform-browser-dynamic": "^10.0.0",
     "@angular/router": "^10.0.0",
     "core-js": "3.6.4",
     "rxjs": "6.5.4",
-    "zone.js": "0.10.2",
-    "tslib": "1.13.0"
+    "tslib": "1.13.0",
+    "zone.js": "0.10.2"
   },
   "devDependencies": {
     "@angular/cli": "1.6.6",

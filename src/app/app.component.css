@@ -175,8 +175,6 @@ body {
   border-radius: 50%;
   margin-left: auto;
 }
-/* END OTHER PAGES */
-
 /* HANDLE ANIMATION */
 .page {
   animation: fade 1s ease-out;

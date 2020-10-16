@@ -11,7 +11,7 @@
       <button class="btn btn--icon"><span class="cross_bar"></span></button>
     </div>s
   </nav> -->
-  <main>
+  <main *ngIf="activeTile === ''">
     <img
       class="logo"
       src="https://res.cloudinary.com/swssr/image/upload/v1602810056/bansela_assets/ekjz2kol4ctuakqwbh4i.png"
@@ -29,12 +29,13 @@
       </div>
     </div>
     <div class="list-wrapper">
-      <div class="list-head">Available Promotion</div>
+      <div class="list-head">Available Promotions</div>
       <ul class="list list--horizontal">
         <li
           *ngFor="let tile of tiles"
           class="list__item card"
           [ngStyle]="{'color': tile.color || '#f4f4f4'}"
+          (click)="setActiveTile(tile.id)"
         >
           <img src="{{tile.img}}" alt="promo__img" />
           <div class="labels">
@@ -52,26 +53,10 @@
   <nav class="nav nav--bottom"></nav>
 </div>
 
-<!-- PAGE HUNTERS -->
-<div *ngIf="false" class="page page--hunters"></div>
-<!-- PAGE HUNTERS -->
-
-<!-- PAGE SAVANNA -->
-<div *ngIf="false" class="page page--savanna"></div>
-<!-- PAGE SAVANNA -->
-
-<!-- PAGE VICEROY -->
-<div *ngIf="false" class="page page--viceroy"></div>
-<!-- PAGE VICEROY -->
-
-<!-- PAGE 4TH-STREET -->
-<div *ngIf="false" class="page page--street"></div>
-<!-- PAGE 4TH-STREET -->
-
 <!-- MODAL - SCRATCH -->
-<div *ngIf="true" class="dialog" role="dialog">
+<div *ngIf="activeTile === 'scratch'" class="dialog" role="dialog">
   <div class="dialog__actions-wrapper">
-    <button class="btn btn--icon btn--close">
+    <button (click)="setActiveTile('')" class="btn btn--icon btn--close">
       <span class="cross_bar"></span>
     </button>
   </div>

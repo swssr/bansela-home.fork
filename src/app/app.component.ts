@@ -10,12 +10,14 @@ export class AppComponent implements OnInit {
   private profile: any = null;
   private tiles: any = [
     {
+      id: "hunters",
       name: "Hunters",
       offer: "GET 50 BUCKS",
       img:
         "https://res.cloudinary.com/swssr/image/upload/v1602809680/bansela_assets/uq8vy3olgqt6n5ingh9k.jpg"
     },
     {
+      id: "viceroy",
       name: "Viceroy",
       offer: "FREE AIRTIME",
       img:
@@ -23,12 +25,14 @@ export class AppComponent implements OnInit {
       cta: "GET NOW"
     },
     {
+      id: "street",
       name: "4TH Street",
       offer: "DISCOUNT OFFER",
       img:
         "https://res.cloudinary.com/swssr/image/upload/v1602814949/bansela_assets/zlnl8gtu6jdlfewuwa1c.jpg"
     },
     {
+      id: "savanna",
       name: "Savanna",
       offer: "DISCOUNT OFFER",
       img:
@@ -36,6 +40,7 @@ export class AppComponent implements OnInit {
       color: "#015319"
     },
     {
+      id: "scratch",
       name: "",
       offer: "",
       img:
@@ -45,7 +50,7 @@ export class AppComponent implements OnInit {
     }
   ];
 
-  private activeTile: string = null;
+  private activeTile: string = "";
 
   ngOnInit(): void {
     this.profile = { bucks: Math.round(Math.random() * 100) };
@@ -53,5 +58,7 @@ export class AppComponent implements OnInit {
 
   openDialog() {}
 
-  setActive() {}
+  setActiveTile(tileName: string) {
+    this.activeTile = tileName;
+  }
 }
