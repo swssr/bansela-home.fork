@@ -1,0 +1,149 @@
+html,
+body {
+  overflow: hidden;
+}
+.page {
+  padding: 2em;
+  width: 100%;
+  height: min-content;
+  overflow: hidden;
+  background-size: cover;
+  background-position: top left;
+  background-attachment: fixed;
+}
+
+.bg {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 45vh 1fr;
+  top: -1vh;
+  left: -1vw;
+  width: 102vw;
+  height: 102vh;
+  background-image: url("https://res.cloudinary.com/swssr/image/upload/v1602781965/bansela_assets/rxifjz2he7eb9tkld5nc.png");
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.74);
+  filter: brightness(0.7) blur(1px);
+  z-index: 0;
+}
+.bg + * {
+  transform: scale(1);
+  z-index: 2;
+}
+.bg::before,
+.bg::after {
+  content: "";
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.bg::after {
+  /* background-color: red; */
+  /* background-image: url("https://res.cloudinary.com/swssr/image/upload/v1602781965/bansela_assets/rxifjz2he7eb9tkld5nc.png"); */
+  background-size: cover;
+  background-position: top left;
+  background-attachment: fixed;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+.nav__inner {
+}
+.logo {
+  width: 100px;
+  margin-bottom: 1em;
+}
+.page--home .hero {
+  text-align: center;
+}
+.cta-wrapper {
+  --w: calc(100vw - 4em);
+  position: relative;
+  width: var(--w);
+  height: calc(var(--w) / 2);
+  background-color: #ffffff2c;
+  color: #f4f4f4;
+  font-style: 18px;
+  margin: 1em auto;
+  /* box-shadow: 0 0 16px rgba(0, 0, 0, 0.16); */
+  border-radius: var(--border-radius);
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+}
+.cta-wrapper::before {
+  --w: 4px;
+  --h: 80%;
+  content: "";
+  position: absolute;
+  width: var(--w);
+  height: var(--h);
+  top: calc(50% - var(--h) / 2);
+  left: calc(50% - var(--w) / 2);
+  margin: auto 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.cta {
+  --size: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: var(--size);
+  width: var(--size);
+  margin: auto;
+  border: 4px solid #f4f4f4;
+  /* background-color: #fff; */
+  background-image: url("https://res.cloudinary.com/swssr/image/upload/v1602805068/bansela_assets/mcoprqekslzmpckwvoau.svg");
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  animation: pulse 4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+  transition: 0.8s;
+}
+.em {
+  font-weight: 700;
+}
+.accent {
+  color: #f1af29;
+}
+
+/* .cta:last-child {
+  --size: 70%;
+  animation-delay: 1s;
+  animation-duration: 8s;
+  filter: brightness(0.8);
+} */
+
+.cta:hover {
+  --size: 90%;
+  filter: brightness(1);
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1),
+    0 0 0 18px rgba(255, 255, 255, 0.1) !important;
+}
+.cta-wrapper:hover .cta:not(:hover) {
+  --size: 70%;
+  filter: brightness(0.8);
+  animation-duration: 1000s;
+}
+.logo {
+  /* position: absolute;
+  left: 50%; */
+  /* transform: translateX(-50%); */
+  display: flex;
+  margin: 0 auto;
+}
+.promo__img {
+  /* z-index: 0; */
+  z-index: -1;
+}
+.promo__img ~ * {
+  transform: scale(1);
+  z-index: 2;
+}
+@media (max-width: 368px) {
+  .hero {
+    padding: 0;
+    margin-top: 4vh;
+  }
+}
