@@ -36,10 +36,10 @@ export class AppComponent implements OnInit {
       color: "#015319"
     },
     {
-      name: "Bansela",
-      offer: "SCRATCH & WIN",
+      name: "",
+      offer: "",
       img:
-        "https://res.cloudinary.com/swssr/image/upload/v1602815155/bansela_assets/jt7ko5spxnlrryr8qhmr.png",
+        "https://res.cloudinary.com/swssr/image/upload/v1602820115/bansela_assets/t0yyvwen0grhtv8len7r.jpg",
       color: "#015319",
       cta: "PLAY NOW"
     }
@@ -48,4 +48,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.profile = { bucks: Math.round(Math.random() * 100) };
   }
+
+  openDialog() {}
+
+  setActive() {}
 }
