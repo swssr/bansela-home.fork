@@ -132,7 +132,7 @@ body {
 }
 .list__item {
   position: relative;
-  min-width: 75vw !important;
+  min-width: 78vw !important;
   transition: 0.4s;
   background-color: gray;
   padding: 1em;
@@ -140,6 +140,7 @@ body {
   justify-content: space-between;
   align-items: flex-end;
   border-radius: var(--border-radius);
+  overflow: hidden;
 }
 .list:hover .list__item:hover {
   transform: scale(1.05);
@@ -226,6 +227,69 @@ body {
 }
 .cross_bar:hover {
   animation: spin 1s ease-in;
+}
+.btn--corner {
+  position: relative;
+  z-index: 1;
+}
+.btn--corner::before {
+  --s: 8em !important;
+  content: "";
+  position: absolute;
+  width: var(--s);
+  height: var(--s);
+  background-color: rgba(31, 29, 29, 0.384);
+  margin-left: 1em;
+  margin-top: 0.5em;
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulse 7s infinite;
+}
+.btn--urgent {
+  background-color: var(--color-accent);
+  padding: 0.2em 0.3em;
+  border-radius: 6px;
+  box-shadow: 0 0 16px rgba(29, 27, 27, 0.425);
+  border: 2px solid #f4f4f433;
+  transition: 0.4s;
+}
+.list__item .btn--urgent {
+  animation: shake 0.82s 4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both,
+    pulse 4s ease-out forwards;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.list__item:hover .btn--urgent {
+  animation: shake 0.82s 4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both,
+    pulse 4s ease-out forwards infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 @keyframes spin {
   0% {

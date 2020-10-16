@@ -20,7 +20,7 @@
     <div class="hero">
       <div class="prehead">Welcome</div>
       <p>Your bucks balance is</p>
-      <div class="subhead accent">
+      <div class="subhead accent buck-counter">
         <strong>{{ profile.bucks }}</strong> <span> bucks</span>
       </div>
       <div class="cta-wrapper">
@@ -31,30 +31,19 @@
     <div class="list-wrapper">
       <div class="list-head">Available Promotion</div>
       <ul class="list list--horizontal">
-        <li class="list__item card">
-          <img
-            src="https://res.cloudinary.com/swssr/image/upload/v1602809680/bansela_assets/uq8vy3olgqt6n5ingh9k.jpg"
-            alt="promo__img"
-          />
+        <li
+          *ngFor="let tile of tiles"
+          class="list__item card"
+          [ngStyle]="{'color': tile.color || '#f4f4f4'}"
+        >
+          <img src="{{tile.img}}" alt="promo__img" />
           <div class="labels">
-            <p>Hunter's</p>
-            <h3>GET 50 BUCKS!</h3>
+            <p>{{tile.name}}</p>
+            <h2>{{tile.offer}}</h2>
           </div>
           <div class="actions">
-            <button class="btn btn--plain">TAP ME</button>
+            <div class="btn btn--urgent">{{tile.cta || "LEARN HOW"}}</div>
           </div>
-        </li>
-        <li class="list__item card">
-          <img
-            src="https://res.cloudinary.com/tumi/image/upload/v1602649488/Home%20PWAs/Baron/compressed/BD_BARON_STEAK_TUESDAY_In_app_awarness_screen_1000_x_7000.jpg"
-            alt="promo card"
-          />
-        </li>
-        <li class="list__item card">
-          <img
-            src="https://res.cloudinary.com/tumi/image/upload/v1602649573/Home%20PWAs/Baron/compressed/BD_BARON_LADIES_LUNCH_In_app_awarness_screen_1000_x_7000.jpg"
-            alt="promo card"
-          />
         </li>
         <div class="list__pad"></div>
       </ul>
